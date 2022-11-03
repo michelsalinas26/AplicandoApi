@@ -11,7 +11,7 @@ namespace IntegrandoApi.Repository
             {
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "insert into Producto(Descripciones, Costo, PrecioVenta, Stock, IdUsuario) values (@descripciones, @costo, @precioventa, @stock, @idusuario)";
+                cmd.CommandText = "insert into Producto(Descripciones, Costo, PrecioVenta, Stock, IdUsuario) values (@descripciones, @costo, @precioventa, @stock, @idusuario);";
 
                 var paramDescripciones = new SqlParameter();
                 paramDescripciones.ParameterName = "descripciones";
@@ -104,11 +104,13 @@ namespace IntegrandoApi.Repository
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandText = "Delete from Producto where id = @idUsu";
-
+                
                 var param = new SqlParameter();
                 param.ParameterName = "idUsu";
                 param.SqlDbType = System.Data.SqlDbType.BigInt;
                 param.Value = id;
+
+                ADO_ProductoVendido.EliminarProductoVendido(id);
 
                 cmd.Parameters.Add(param);
                 cmd.ExecuteNonQuery();

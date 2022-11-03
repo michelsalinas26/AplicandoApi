@@ -7,6 +7,8 @@
         public int IdProducto { get; set; }
         public int IdVenta { get; set; }
 
+        
+
         public ProductoVendido(int id, int stock, int idProducto, int idVenta)
         {
             Id = id;

@@ -6,6 +6,8 @@
         public string Comentarios { get; set; }
         public int IdUsuario { get; set; }
 
+        public List<ProductoVendido> Productos { get; set; }
+
         public Venta(int id, string comentarios, int idUsuario)
         {
             Id = id;

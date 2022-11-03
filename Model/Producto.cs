@@ -9,6 +9,9 @@
         public int Stock { get; set; }
         public int IdUsuario { get; set; }
 
+
+        public ProductoVendido Pv { get; set;  }
+
         public Producto(int id, string descripciones, float costo, float precioVenta, int stock, int idUsuario)
         {
             Id = id;

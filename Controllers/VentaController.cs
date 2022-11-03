@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using IntegrandoApi.Model;
+using IntegrandoApi.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IntegrandoApi.Controllers
@@ -7,5 +9,10 @@ namespace IntegrandoApi.Controllers
     [ApiController]
     public class VentaController : ControllerBase
     {
+        [HttpPost]
+        public void Insertar([FromBody] Venta vent)
+        {
+            ADO_Venta.AgregarVenta(vent);
+        }
     }
 }
